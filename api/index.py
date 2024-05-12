@@ -6,7 +6,7 @@ from nltk.stem import SnowballStemmer
 
 app = Flask(__name__)
 
-# preprocessor = pickle.load(open('../preprocessor.pkl', 'rb'))
+preprocessor = pickle.load(open('../preprocessor.pkl', 'rb'))
 # model = pickle.load(open('../trained_model_XGBoost.pkl', 'rb'))
 
 @app.route('/')
