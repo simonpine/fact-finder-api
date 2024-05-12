@@ -49,7 +49,7 @@ def test():
 def predict():
     data = request.get_json()
 
-    return(request.get_json())
+    # return(request.get_json())
 
     title = data.title
     text = data.text
