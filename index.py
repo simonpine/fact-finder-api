@@ -54,10 +54,10 @@ def test():
                   columns=['text', 'title'])
 
 
-    dfForTest['text'] = dfForTest['text'].apply(removeStopwordsAndLower)
-    dfForTest['title'] = dfForTest['title'].apply(removeStopwordsAndLower)
-    dfForTest['text'] = dfForTest['text'].apply(lemaAndStem)
-    dfForTest['title'] = dfForTest['title'].apply(lemaAndStem)
+    # dfForTest['text'] = dfForTest['text'].apply(removeStopwordsAndLower)
+    # dfForTest['title'] = dfForTest['title'].apply(removeStopwordsAndLower)
+    # dfForTest['text'] = dfForTest['text'].apply(lemaAndStem)
+    # dfForTest['title'] = dfForTest['title'].apply(lemaAndStem)
 
     # dfForTest = preprocessor.transform(dfForTest)
     # res = model.predict_proba(dfForTest)
