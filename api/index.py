@@ -1,12 +1,12 @@
 from flask import Flask, jsonify, request
-# import pickle
+import pickle
 # import pandas as pd
 # from nltk.corpus import stopwords
 # from nltk.stem import SnowballStemmer
 
 
-# preprocessor = pickle.load(open('./preprocessor.pkl', 'rb'))
-# model = pickle.load(open('./trained_model_XGBoost.pkl', 'rb'))
+preprocessor = pickle.load(open('./preprocessor.pkl', 'rb'))
+model = pickle.load(open('./trained_model_XGBoost.pkl', 'rb'))
 # def removeStopwordsAndLower(text):
 #     stop_words = set(stopwords.words('english')) 
 #     words = text.lower().split() 
