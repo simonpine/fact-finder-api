@@ -6,7 +6,7 @@ from nltk.stem import SnowballStemmer
 
 app = Flask(__name__)
 
-# model = pickle.load(open('../trained_model_XGBoost.pkl', 'rb'))
+model = pickle.load(open('../trained_model_XGBoost.pkl', 'rb'))
 
 @app.route('/')
 def home():
@@ -30,7 +30,7 @@ def asd():
         # return ' '.join(normalized_text).replace(',', '')
     def asdasd(text):
         return [text, text]
-    return {'hola': str(asdasd('Holas'))}
+    return {'hola': str(asdasd('Esto esta yendo bien'))}
 
 # @app.route('/test')
 # def test():
