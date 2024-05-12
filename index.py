@@ -59,8 +59,8 @@ def test():
     # dfForTest['title'] = dfForTest['title'].apply(lemaAndStem)
 
     dfForTest = preprocessor.transform(dfForTest)
-    # res = model.predict_proba(dfForTest)
-    return "Hasta aqui todo bien"
+    res = model.predict_proba(dfForTest)
+    # return "Hasta aqui todo bien"
     return {'FakePosibility' :str(round(res[0][0], 4)),
             'RealPosibility' :str(round(res[0][1], 4))
             }
