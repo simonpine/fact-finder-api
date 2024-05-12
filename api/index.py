@@ -29,7 +29,7 @@ def asd():
         return ' '.join(normalized_text).replace(',', '')
     def asdasd(text):
         return [text, text]
-    return {'hola': str(asdasd('Chaoo'))}
+    return {'hola': str(asdasd('Chiba'))}
 
 # @app.route('/test')
 # def test():
