@@ -5,7 +5,7 @@ import pickle
 # from nltk.stem import SnowballStemmer
 
 
-# preprocessor = pickle.load(open('./preprocessor.pkl', 'rb'))
+preprocessor = pickle.load(open('./preprocessor.pkl', 'rb'))
 # model = pickle.load(open('./trained_model_XGBoost.pkl', 'rb'))
 # def removeStopwordsAndLower(text):
 #     stop_words = set(stopwords.words('english')) 
