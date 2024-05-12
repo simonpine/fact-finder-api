@@ -3,7 +3,6 @@ import pickle
 import pandas as pd
 from nltk.corpus import stopwords
 from nltk.stem import SnowballStemmer
-W
 
 app = Flask(__name__)
 
