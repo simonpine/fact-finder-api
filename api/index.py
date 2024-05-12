@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-# import pickle
+import pickle
 # import pandas as pd
 # from nltk.corpus import stopwords
 # from nltk.stem import SnowballStemmer
@@ -30,7 +30,7 @@ def home():
 
 @app.route('/asd')
 def asd():
-    return 'asd5'
+    return 'asd6'
 
 # @app.route('/test')
 # def test():
