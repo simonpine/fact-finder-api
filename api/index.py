@@ -14,7 +14,7 @@ def home():
 
 @app.route('/asd')
 def asd():
-    preprocessor = pickle.load(open('../preprocessor.pkl', 'rb'))
+    # preprocessor = pickle.load(open('../preprocessor.pkl', 'rb'))
 
     def removeStopwordsAndLower(text):
         stop_words = set(stopwords.words('english')) 
