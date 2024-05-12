@@ -53,23 +53,25 @@ def predict():
 
     title = data.title
     text = data.text
-    dfForTest = pd.DataFrame([[text, title]],
-                  columns=['text', 'title'])
 
-    def lemaAndStem(text):
-        stemmer = SnowballStemmer("english")
-        normalized_text = []
-        for word in text.split():
-            stemmed_word = stemmer.stem(word)
-            normalized_text.append(stemmed_word)
-        return ' '.join(normalized_text).replace(',', '')
+    return(f"{title}, {text}, {type(title)}")
+    # dfForTest = pd.DataFrame([[text, title]],
+    #               columns=['text', 'title'])
 
-    dfForTest['text'] = dfForTest['text'].apply(lemaAndStem)
-    dfForTest['title'] = dfForTest['title'].apply(lemaAndStem)
+    # def lemaAndStem(text):
+    #     stemmer = SnowballStemmer("english")
+    #     normalized_text = []
+    #     for word in text.split():
+    #         stemmed_word = stemmer.stem(word)
+    #         normalized_text.append(stemmed_word)
+    #     return ' '.join(normalized_text).replace(',', '')
 
-    dfForTest = preprocessor.transform(dfForTest)
-    res = model.predict_proba(dfForTest)
+    # dfForTest['text'] = dfForTest['text'].apply(lemaAndStem)
+    # dfForTest['title'] = dfForTest['title'].apply(lemaAndStem)
 
-    return {'FakePosibility' :str(round(res[0][0], 4)),
-            'RealPosibility' :str(round(res[0][1], 4))
-            }
+    # dfForTest = preprocessor.transform(dfForTest)
+    # res = model.predict_proba(dfForTest)
+
+    # return {'FakePosibility' :str(round(res[0][0], 4)),
+    #         'RealPosibility' :str(round(res[0][1], 4))
+    #         }
