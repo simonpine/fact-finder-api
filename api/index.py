@@ -3,21 +3,7 @@ import pickle
 import pandas as pd
 from nltk.corpus import stopwords
 from nltk.stem import SnowballStemmer
-
-def removeStopwordsAndLower(text):
-    stop_words = set(stopwords.words('english')) 
-    words = text.lower().split() 
-    filtered_words = [word for word in words if word not in stop_words] 
-    return ' '.join(filtered_words)
-def lemaAndStem(text):
-    stemmer = SnowballStemmer("english")
-    normalized_text = []
-    for word in text.split():
-        stemmed_word = stemmer.stem(word)
-        normalized_text.append(stemmed_word)
-    return ' '.join(normalized_text).replace(',', '')
-
-
+W
 
 app = Flask(__name__)
 
@@ -30,6 +16,18 @@ def home():
 
 @app.route('/asd')
 def asd():
+    def removeStopwordsAndLower(text):
+        stop_words = set(stopwords.words('english')) 
+        words = text.lower().split() 
+        filtered_words = [word for word in words if word not in stop_words] 
+        return ' '.join(filtered_words)
+    def lemaAndStem(text):
+        stemmer = SnowballStemmer("english")
+        normalized_text = []
+        for word in text.split():
+            stemmed_word = stemmer.stem(word)
+            normalized_text.append(stemmed_word)
+        return ' '.join(normalized_text).replace(',', '')
     return {'hola': str(removeStopwordsAndLower('HELLO'))}
 
 # @app.route('/test')
