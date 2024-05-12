@@ -27,7 +27,9 @@ def asd():
             stemmed_word = stemmer.stem(word)
             normalized_text.append(stemmed_word)
         return ' '.join(normalized_text).replace(',', '')
-    return {'hola': str(removeStopwordsAndLower('HELLO'))}
+    def asdasd(text):
+        return [text, text]
+    return {'hola': str(asdasd('HELLO'))}
 
 # @app.route('/test')
 # def test():
