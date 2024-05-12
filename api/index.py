@@ -3,10 +3,6 @@ import pickle
 # import pandas as pd
 # from nltk.corpus import stopwords
 # from nltk.stem import SnowballStemmer
-
-
-preprocessor = pickle.load(open('./preprocessor.pkl', 'rb'))
-model = pickle.load(open('./trained_model_XGBoost.pkl', 'rb'))
 # def removeStopwordsAndLower(text):
 #     stop_words = set(stopwords.words('english')) 
 #     words = text.lower().split() 
@@ -24,13 +20,16 @@ model = pickle.load(open('./trained_model_XGBoost.pkl', 'rb'))
 
 app = Flask(__name__)
 
+# preprocessor = pickle.load(open('./preprocessor.pkl', 'rb'))
+# model = pickle.load(open('./trained_model_XGBoost.pkl', 'rb'))
+
 @app.route('/')
 def home():
     return 'Is working'
 
 @app.route('/asd')
 def asd():
-    return 'asd7'
+    return 'asd8'
 
 # @app.route('/test')
 # def test():
