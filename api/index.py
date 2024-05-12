@@ -1,8 +1,8 @@
 from flask import Flask, jsonify, request
 import pickle
-# import pandas as pd
-# from nltk.corpus import stopwords
-# from nltk.stem import SnowballStemmer
+import pandas as pd
+from nltk.corpus import stopwords
+from nltk.stem import SnowballStemmer
 # def removeStopwordsAndLower(text):
 #     stop_words = set(stopwords.words('english')) 
 #     words = text.lower().split() 
