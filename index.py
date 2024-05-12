@@ -3,8 +3,10 @@ import pickle
 import pandas as pd
 from nltk.corpus import stopwords
 from nltk.stem import SnowballStemmer
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app, origins='https://www.factfinder.today/')
 
 model = pickle.load(open('./trained_model_XGBoost.pkl', 'rb'))
 preprocessor = pickle.load(open('./preprocessor.pkl', 'rb'))
