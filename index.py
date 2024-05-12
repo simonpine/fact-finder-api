@@ -45,9 +45,11 @@ def test():
             'RealPosibility' :str(round(res[0][1], 4))
             }
 
-@app.route('/predict')
+@app.route('/predict', methods=["POST"])
 def predict():
     data = request.get_json()
+
+    return(request.get_json())
 
     title = data.title
     text = data.text
