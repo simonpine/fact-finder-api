@@ -20,8 +20,8 @@ import pickle
 
 app = Flask(__name__)
 
-preprocessor = pickle.load(open('./preprocessor.pkl', 'rb'))
-model = pickle.load(open('./trained_model_XGBoost.pkl', 'rb'))
+preprocessor = pickle.load(open('../preprocessor.pkl', 'rb'))
+model = pickle.load(open('../trained_model_XGBoost.pkl', 'rb'))
 
 @app.route('/')
 def home():
