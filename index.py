@@ -1,8 +1,8 @@
 from flask import Flask, jsonify, request
 import pickle
-# import pandas as pd
-# from nltk.corpus import stopwords
-# from nltk.stem import SnowballStemmer
+import pandas as pd
+from nltk.corpus import stopwords
+from nltk.stem import SnowballStemmer
 
 app = Flask(__name__)
 
