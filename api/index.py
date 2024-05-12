@@ -6,7 +6,6 @@ from nltk.stem import SnowballStemmer
 
 app = Flask(__name__)
 
-preprocessor = pickle.load(open('../preprocessor.pkl', 'rb'))
 # model = pickle.load(open('../trained_model_XGBoost.pkl', 'rb'))
 
 @app.route('/')
@@ -15,6 +14,8 @@ def home():
 
 @app.route('/asd')
 def asd():
+    preprocessor = pickle.load(open('../preprocessor.pkl', 'rb'))
+
     def removeStopwordsAndLower(text):
         stop_words = set(stopwords.words('english')) 
         words = text.lower().split() 
@@ -29,7 +30,7 @@ def asd():
         return ' '.join(normalized_text).replace(',', '')
     def asdasd(text):
         return [text, text]
-    return {'hola': str(asdasd('Chiba'))}
+    return {'hola': str(asdasd('Holas'))}
 
 # @app.route('/test')
 # def test():
