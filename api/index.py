@@ -30,7 +30,7 @@ def home():
 
 @app.route('/asd')
 def asd():
-    return str(removeStopwordsAndLower('HELLO'))
+    return {'hola': str(removeStopwordsAndLower('HELLO'))}
 
 # @app.route('/test')
 # def test():
