@@ -58,7 +58,7 @@ def predict():
     # return(f"{title}, {text}, {type(title)}")
     # dfForTest = pd.DataFrame([[text, title]],
     #               columns=['text', 'title'])
-
+    return(str(dfForTest))
     def lemaAndStem(text):
         stemmer = SnowballStemmer("english")
         normalized_text = []
