@@ -49,7 +49,7 @@ def test():
 def predict():
     data = request.get_json()
 
-    # return(data)
+    return(data)
     dfForTest = pd.read_json(data)
 
     # title = data.title
@@ -58,7 +58,6 @@ def predict():
     # return(f"{title}, {text}, {type(title)}")
     # dfForTest = pd.DataFrame([[text, title]],
     #               columns=['text', 'title'])
-    return(str(dfForTest))
     def lemaAndStem(text):
         stemmer = SnowballStemmer("english")
         normalized_text = []
