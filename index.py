@@ -49,7 +49,7 @@ def test():
 def predict():
     data = request.get_json()
 
-    return(data['text'])
+    return({'Res': data['text']})
     dfForTest = pd.read_json(data)
 
     # title = data.title
