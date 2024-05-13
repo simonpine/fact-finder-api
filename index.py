@@ -49,12 +49,13 @@ def test():
 def predict():
     data = request.get_json()
 
-    return({'Res': data['text']})
-    dfForTest = pd.read_json(data)
+    # return({'Res': type(data['text'])})
+    # dfForTest = pd.read_json(data)
 
-    # title = data.title
-    # text = data.text
-
+    title = data['title']
+    text = data['text']
+    dfForTest = pd.DataFrame([[text, title]],
+                  columns=['text', 'title'])
     # return(f"{title}, {text}, {type(title)}")
     # dfForTest = pd.DataFrame([[text, title]],
     #               columns=['text', 'title'])
