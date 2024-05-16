@@ -38,7 +38,7 @@ def test():
     res = model.predict_proba(dfForTest)
     return {'FakePosibility' :str(round(res[0][0], 4)),
             'RealPosibility' :str(round(res[0][1], 4)),
-            # "Polarity": sia.polarity_scores(myLarge)
+            "Polarity": i.polarity_scores("I hate this place")
             }
 @app.route('/predict', methods=["POST"])
 def predict():
