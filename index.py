@@ -38,10 +38,11 @@ def test():
     res = model.predict_proba(dfForTest)
     return {'FakePosibility' :str(round(res[0][0], 4)),
             'RealPosibility' :str(round(res[0][1], 4)),
-            "Polarity": i.polarity_scores("I hate this place")
+            "Polarity": i.polarity_scores(myLarge)
             }
 @app.route('/predict', methods=["POST"])
 def predict():
+    i = SentimentIntensityAnalyzer()
     data = request.get_json()
     title = data['title']
     text = data['text']
@@ -63,6 +64,7 @@ def predict():
 
     return {'FakePosibility' :str(round(res[0][0], 4)),
             'RealPosibility' :str(round(res[0][1], 4)),
+            "Polarity": i.polarity_scores(text),
             'title': title,
             'text': text
             }
