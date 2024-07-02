@@ -68,13 +68,13 @@ def predict():
                 "Polarity": i.polarity_scores(text),
                 'title': title,
                 'text': text,
-                'error': None
+                'error': ''
                 }
-    except Exception as error:
+    except:
         return {'FakePosibility' : str(0),
                 'RealPosibility' :str(0),
                 "Polarity": str(0),
                 'title': '',
                 'text': '',
-                'error': error
+                'error': 'Server error'
                 }
