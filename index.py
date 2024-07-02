@@ -40,15 +40,53 @@ def test():
             'RealPosibility' :str(round(res[0][1], 4)),
             "Polarity": i.polarity_scores(myLarge)
             }
+# @app.route('/predict', methods=["POST"])
+# def predict():
+#     # try:
+#     i = SentimentIntensityAnalyzer()
+#     data = request.get_json()
+#     title = data['title']
+#     text = data['text']
+#     dfForTest = pd.DataFrame([[text, title]],
+#                 columns=['text', 'title'])
+#     def lemaAndStem(text):
+#         stemmer = SnowballStemmer("english")
+#         normalized_text = []
+#         for word in text.split():
+#             stemmed_word = stemmer.stem(word)
+#             normalized_text.append(stemmed_word)
+#         return ' '.join(normalized_text).replace(',', '')
+
+#     dfForTest['text'] = dfForTest['text'].apply(lemaAndStem)
+#     dfForTest['title'] = dfForTest['title'].apply(lemaAndStem)
+
+#     dfForTest = preprocessor.transform(dfForTest)
+#     res = model.predict_proba(dfForTest)
+
+#     return {'FakePosibility' :str(round(res[0][0], 4)),
+#             'RealPosibility' :str(round(res[0][1], 4)),
+#             "Polarity": i.polarity_scores(text),
+#             'title': title,
+#             'text': text,
+#             'error': ''
+#             }
+#     # except:
+#     #     return {'FakePosibility' : str(0),
+#     #             'RealPosibility' :str(0),
+#     #             "Polarity": str(0),
+#     #             'title': '',
+#     #             'text': '',
+#     #             'error': 'Server error'
+#     #             }
+
 @app.route('/predict', methods=["POST"])
 def predict():
-    # try:
     i = SentimentIntensityAnalyzer()
     data = request.get_json()
     title = data['title']
     text = data['text']
     dfForTest = pd.DataFrame([[text, title]],
-                columns=['text', 'title'])
+                  columns=['text', 'title'])
     def lemaAndStem(text):
         stemmer = SnowballStemmer("english")
         normalized_text = []
@@ -67,14 +105,5 @@ def predict():
             'RealPosibility' :str(round(res[0][1], 4)),
             "Polarity": i.polarity_scores(text),
             'title': title,
-            'text': text,
-            'error': ''
+            'text': text
             }
-    # except:
-    #     return {'FakePosibility' : str(0),
-    #             'RealPosibility' :str(0),
-    #             "Polarity": str(0),
-    #             'title': '',
-    #             'text': '',
-    #             'error': 'Server error'
-    #             }
