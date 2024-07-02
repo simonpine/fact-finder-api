@@ -43,7 +43,6 @@ def test():
 @app.route('/predict', methods=["POST"])
 def predict():
     try:
- 
         i = SentimentIntensityAnalyzer()
         data = request.get_json()
         title = data['title']
@@ -72,7 +71,7 @@ def predict():
                 'error': None
                 }
     except Exception as error:
-                return {'FakePosibility' : str(0),
+        return {'FakePosibility' : str(0),
                 'RealPosibility' :str(0),
                 "Polarity": str(0),
                 'title': '',
