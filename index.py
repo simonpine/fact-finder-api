@@ -12,7 +12,7 @@ nltk.downloader.download('vader_lexicon')
 # Initialize the Flask application
 app = Flask(__name__)
 # Enable Cross-Origin Resource Sharing (CORS) for fact finder web
-CORS(app, origins='https://factfinder.vercel.app/')
+CORS(app, origins='https://factfinder.vercel.app')
 
 # Load the fake news model and preprocessor from pickle files
 model = pickle.load(open('./trained_model_XGBoost.pkl', 'rb'))
