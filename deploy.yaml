@@ -1,0 +1,7 @@
+services:
+  fact-finder-api:
+    build: .
+    image: fact-finder-api:1.0
+    container_name: fact-finder-container
+    ports:
+      - "5001:5000"
